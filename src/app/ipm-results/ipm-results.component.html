@@ -1,0 +1,60 @@
+<section class="m-results">
+	<div class="container">
+		<h2 class="m-big-title color-gray-smooth m-medium-title--in-results">Resultados generales y comparativos del 2011-2015</h2>
+		<p class="m-paragraph m-paragraph--in-results">En esta sección se ilustran los principales hallazgos del análisis de recusos federales destinados a proyectos de movilidad urbana con información de las 59 zonas metropolitanas de Méx en los años 2011 a 2015. También es posible realizar la comparación entre el reparto modal contra la inversión en proyectos de movilidad por zona metropolitana.</p>
+		<div class="m-results__chart-container">
+			<div class="pure-g">
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Distribución porcentual de los fondos federales destinados a movilidad, 2011 – 2015</h4>
+					<div class="m-results__chart">
+						<chart-one [options]="ChartOne"></chart-one>
+					</div>
+				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Distribución porcentual en proyectos de movilidad, 2011-2015</h4>
+					<div class="m-results__chart">
+						<chart-two [options]="ChartTwo"></chart-two>
+					</div>
+				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Gasto total proveniente de fondos federales detinado a movilidad, 2011-2015 (Millones de pesos a precios de 2012)</h4>
+					<div class="m-results__chart">
+						<chart-three [options]="ChartThree"></chart-three>
+					</div>
+				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Montos asignados por proyecto de movilidad, 2011-2015 (Millones de pesos a precios de 2012)</h4>
+					<div class="m-results__chart">
+						<chart-four [options]="ChartFour"></chart-four>
+					</div>
+				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Reparto modal e inversión destinada a movilidad urbana en las zonas metropolitanas de México, 2015 (porcentajes)</h4>
+					<div class="m-results__chart">
+						<chart-five [options]="ChartFive"></chart-five>
+					</div>
+				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Distribución porcentual de los fondos federales destinados a movilidad por Zona Metropolitana, 2011 – 2015</h4>
+					<div class="m-results__chart">
+						<ul class="m-list m-list--chart-six">
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2011' " (click)="setChartYear('2011')">2011</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2012' " (click)="setChartYear('2012')">2012</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2013' " (click)="setChartYear('2013')">2013</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2014' " (click)="setChartYear('2014')">2014</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2015' " (click)="setChartYear('2015')">2015</a></li>
+						</ul>
+						<chart-six [updateYear]="yearActive" [options]="ChartSix"></chart-six>
+						<ul class="m-list m-list--chart-six">
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2011' " (click)="setChartYear('2011')">2011</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2012' " (click)="setChartYear('2012')">2012</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2013' " (click)="setChartYear('2013')">2013</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2014' " (click)="setChartYear('2014')">2014</a></li>
+							<li class="m-list--chart-six__item"><a class="m-list--chart-six__item-link" [class.active]="yearActive === '2015' " (click)="setChartYear('2015')">2015</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

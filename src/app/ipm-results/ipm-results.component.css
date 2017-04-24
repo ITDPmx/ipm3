@@ -1,0 +1,83 @@
+.m-results {
+	background-color:#F6F6F6;
+	padding: 80px 0px;
+}
+.m-results__chart {
+	padding: 20px 0px 80px;
+}
+
+.m-results__chart-container {
+	margin: 50px 0px 20px;
+}
+
+.m-medium-title--in-results {
+	color: #297373;
+}
+
+.m-small-title--in-results-graphics {
+	color: #545454;
+	font-weight: 500;
+	margin-bottom:0;
+	font-family: 'Alegreya Sans', sans-serif; 
+}
+
+.slick-dots li a{
+	color: #888B8D;
+	text-decoration:underline;
+}
+.slick-dots li a.slick-active{
+	font-weight: 700;
+	color: #545454;
+	text-decoration:none;
+}
+
+.custom-next-button,
+.custom-prev-button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	display: none;
+	height: 35px;
+	right: -25px;
+	line-height: 0;
+	margin-top: -10px;
+	outline: none;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	width: 30px;
+}
+.custom-next-button i::before,
+.custom-prev-button i::before{
+	font-size: 30px;
+	color: #545454;
+}
+
+.custom-prev-button {
+	left: -30px;
+}
+
+.custom-next-button{
+	right: -30px;
+}
+
+.m-paragraph--in-results {
+	font-size: 20px;
+	font-weight: 400;
+	margin: 60px 0px 30px;
+}
+@media screen and (min-width: 768px) {
+	.m-results {
+			padding: 90px 0px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.m-results {
+		padding: 100px 0px;
+	}
+	.custom-next-button,
+	.custom-prev-button {
+		display:block;
+	}
+}

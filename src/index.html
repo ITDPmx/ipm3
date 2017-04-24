@@ -1,14 +1,32 @@
 <!doctype html>
 <html>
 <head>
+  <base href="/">
   <meta charset="utf-8">
   <title>Ipm2</title>
-  <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700" rel="stylesheet">
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+  <!--<![endif]-->
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <div class="loading-page">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+  </app-root>
+  <script src="./node_modules/scrollreveal/dist/scrollreveal.min.js"></script>
 </body>
 </html>

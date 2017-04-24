@@ -1,0 +1,234 @@
+.m-header{
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index:5;
+}
+.m-header__logo {
+	left: 0;
+	line-height: 30px;
+	padding: 8px;
+	position: fixed;
+	top: 0;
+}
+
+.m-header__logo-img {
+	width: initial;
+	height: 46px;
+}
+
+.m-header-list{
+	display: none;
+	margin: 5px 55px 5px 5px;
+	position: inherit;
+	right: 58.172px;
+}
+.m-header__menu {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	right: 0px;
+}
+.m-list-logos__item,
+.m-list-social__item {
+	padding: 0 10px;
+}
+.m-list-logos__item-img {
+	display: inline-block;
+	height: 20px;
+	vertical-align: middle;
+	width: auto;
+}
+.m-list-social__item-link {
+	color: white;
+	text-decoration: none;
+}
+
+.open-menu {
+	background-color: transparent;
+	border-radius: 0.5rem;
+	border: 1px solid white;
+	cursor: pointer;
+	display: inline-block;
+	margin: 5px;
+	padding: 6px 11px;
+	position: fixed;
+	right: 0;
+}
+.open-menu__icon{
+	display: block;
+	text-align: center;
+}
+.open-menu__icon i.ipm-menu:before{
+	font-size: 25px;
+}
+.open-menu__title{
+	color: white;
+	display: block;
+	font-size: 0.70rem;
+	font-weight: 500;
+}
+
+
+/* Overlay style */
+.overlay {
+	background: url('/assets/images/background_menu.jpg') no-repeat center center;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-size:cover;
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	background: url('/assets/images/cross.png') no-repeat center center;
+	border: none;
+	color: transparent;
+	cursor: pointer;
+	height: 40px;
+	outline: none;
+	overflow: hidden;
+	position: absolute;
+	right: 20px;
+	text-indent: 200%;
+	top: 20px;
+	width: 40px;
+	z-index: 100;
+}
+
+.is-hide-in-mobile {
+	display: none;
+}
+
+/* Menu style */
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 60%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 4);
+	min-height: 54px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.overlay ul li a {
+	-webkit-transition: color 0.2s;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 54px;
+	font-weight: 100;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: $gray-smooth;
+}
+
+/* Effects */
+.overlay-door {
+	visibility: hidden;
+	width: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	-webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
+	transition: width 0.5s 0.3s, visibility 0s 0.8s;
+	z-index: 10;
+}
+
+.overlay-door.open {
+	-webkit-transition: width 0.5s;
+	transition: width 0.5s;
+	visibility: visible;
+	width: 100%;
+	z-index: 10;
+	background: url('/assets/images/background_menu.jpg') no-repeat center center;
+	background-size:cover;
+}
+
+.overlay-door nav {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
+}
+
+.overlay-door nav,
+.overlay-door .overlay-close {
+	opacity: 0;
+	-webkit-transition: opacity 0.5s 0s;
+	transition: opacity 0.5s 0s;
+}
+
+.overlay-door.open nav,
+.overlay-door.open .overlay-close {
+	opacity: 1;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+.overlay-door.close nav,
+.overlay-door.close .overlay-close {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.overlay-door nav.is_loading {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0s;
+	transition: opacity 0.3s 0s;
+}
+
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.m-header-list{
+		display: flex; 
+	}
+	.m-header__logo-img {
+		height: 56px;
+	}
+	.m-list-logos__item-img {
+		height: 57px;
+	}
+	.m-project-title{
+		display: block;
+	}
+	.overlay .overlay-close {
+		width: 80px;
+		height: 80px;
+	}
+}

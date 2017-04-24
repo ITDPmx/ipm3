@@ -1,0 +1,47 @@
+<div class="m-header">
+	<div class="m-header__logo">
+		<a href="/">
+			<img [src]="ipmLogo" alt="" id="logo_ipm" class="m-header__logo-img">
+		</a>
+	</div>
+	
+	<div class="m-header-list is-hide-in-mobile">
+		<ul class="m-list m-list-logos">
+			<li class="m-list__item m-list-logos__item">
+				<a href="https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419" target="_blank">
+					<img class="m-list-logos__item-img" [src]="embassyLogo" alt="Logo Embajada Británica" id="logo_embajada_britanica">
+				</a>
+			</li>
+			<li class="m-list__item m-list-logos__item">
+				<a href="http://mexico.itdp.org/" target="_blank">
+					<img class="m-list-logos__item-img" [src]="itdpLogo" alt="Logo ITDP México" id="logo_itdp_mexico">
+				</a>
+			</li>
+		</ul>
+		<ul class="m-list m-list-social" id="social">
+			<li class="m-list__item m-list-social__item" id="twitteIcon">
+				<a class="m-list-social__item-link" href="https://twitter.com/ITDPmx" target="_blank" [style.color]="updateColor"><i class="ipm-twitter-logo"></i></a>
+			</li>
+			<li class="m-list__item m-list-social__item" id="facebookIcon">
+				<a class="m-list-social__item-link" href="https://www.facebook.com/itdpmx/" target="_blank" [style.color]="updateColor"><i class="ipm-facebook-logo"></i></a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="open-menu" id="menuButton" (click)="toggleMenu()" [style.border]="updateMenuButton">
+		<span class="open-menu__icon"><i class="ipm-menu" [style.color]="updateColor"></i></span>
+		<span class="open-menu__title" [style.color]="updateColor">MENU</span>
+	</div>
+</div>
+
+<div class="overlay overlay-door" [ngClass]="{ 'open': isMenuOpen }">
+	<button type="button" class="overlay-close" (click)="toggleMenu()">Close</button>
+	<nav class="js-is-loading">
+		<ul>
+			<li><a routerLink="" routerLinkActive="active" (click)="toggleMenu()">Inicio</a></li>
+			<li><a routerLink="resultados" routerLinkActive="active" (click)="toggleMenu()">Resultados</a></li>
+			<li><a routerLink="mapa" routerLinkActive="active" (click)="toggleMenu()">Mapa</a></li>
+			<li><a routerLink="descargas" routerLinkActive="active" (click)="toggleMenu()">Descargas</a></li>
+		</ul>
+	</nav>
+</div>

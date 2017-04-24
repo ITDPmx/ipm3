@@ -1,0 +1,51 @@
+<section class="m-landing__intro m-landing">
+	<div class="m-landing__container m-landing__container--in-landing-intro">
+		<div class="m-landing__container-title not-hover">
+			<h1>INVERTIR PARA MOVERNOS</h1>
+		</div>
+		<div class="m-landing__container-content">
+			<p>Diagnóstico de inversion en movilidad en las zonas metropolitanas de México 2011-2015</p>
+		</div>
+	</div>
+</section>
+
+<section class="m-landing__results m-landing" [ngsRevealSet]="{ viewOffset: {top: 100} }" [ngsInterval]="2000" [ngsSelector]="'.animation-results'">
+	<div class="m-landing__container m-landing__container--in-results animation-results">
+		<div class="m-landing__container-icon">
+			<i class="ipm-graphics"></i>
+		</div>
+		<a routerLink="resultados" class="m-landing__container-title m-landing__container-title--with-hover" >
+			<h1>Análisis de la inversión</h1>
+			<h1>en movilidad urbana</h1>
+			<h1>2011-2015</h1>
+		</a>
+		<a routerLink="resultados" class="m-landing__container-link">Ver resultados</a>
+	</div>
+</section>
+
+<section class="m-landing__map m-landing" [ngsRevealSet]="{  viewOffset: {top: 100}}" [ngsInterval]="2000" [ngsSelector]="'.animation-map'">
+	<div class="m-landing__container animation-map">
+		<div class="m-landing__container-icon ">
+			<i class="ipm-map"></i>
+		</div>
+		<a routerLink="mapa" class="m-landing__container-title m-landing__container-title--with-hover">
+			<h1>Resultados por</h1>
+			<h1>zonas metropolitanas</h1>
+		</a>
+		<a routerLink="mapa" class="m-landing__container-link">Consulta el mapa</a>
+	</div>
+</section>
+
+<section class="m-landing__downloads m-landing" [ngsRevealSet]="{  viewOffset: {top: 100}}" [ngsInterval]="2000" [ngsSelector]="'.animation-downloads'">
+	<div class="m-landing__container animation-downloads">
+		<div class="m-landing__container-icon m-landing__container-icon--in-downloads-section">
+			<i class="ipm-download"></i>
+		</div>
+		<a routerLink="descargas" class="m-landing__container-title m-landing__container-title--with-hover m-landing__container-title--in-downloads-section ">
+			<h1>Reportes,</h1>
+			<h1>Bases de datos</h1>
+			<h1>y Anexos</h1>
+		</a>
+		<a routerLink="descargas" class="m-landing__container-link">Descarga los datos</a>
+	</div>
+</section>
