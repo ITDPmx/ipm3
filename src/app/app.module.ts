@@ -10,6 +10,7 @@ import { IpmLandingComponent } from './ipm-landing/ipm-landing.component';
 import { IpmResultsComponent } from './ipm-results/ipm-results.component';
 import { IpmFooterComponent } from './ipm-footer/ipm-footer.component';
 import { ChartOneComponent } from './charts/chart-one/chart-one.component';
+import { ChartSixDataService } from './chart.data.service';
 
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { ChartModule } from 'angular2-highcharts';
@@ -68,6 +69,7 @@ const routes = [
     ChartModule
   ],
   providers: [
+    ChartSixDataService,
     {
       provide: HighchartsStatic,
       useFactory: highchartsFactory

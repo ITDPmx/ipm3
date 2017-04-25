@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output} from '@angular/core';
 
+export declare let require: any;
+const Chart = require('highcharts');
 @Component({
 	selector: 'ipm-results',
 	templateUrl: './ipm-results.component.html',
@@ -17,6 +19,7 @@ export class IpmResultsComponent implements OnInit {
 
 	constructor() {
 		this.yearActive = "2011";
+
 		this.ChartOne = {
 			chart: {
 				type: 'column',
@@ -90,7 +93,7 @@ export class IpmResultsComponent implements OnInit {
 			},
 			colors: [],
 			series: []
-		}
+		};
 
 		this.ChartTwo = {
 			chart: {
@@ -401,7 +404,7 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 1000
+				height: 1200
 			},
 			title: {
 				text: ''
