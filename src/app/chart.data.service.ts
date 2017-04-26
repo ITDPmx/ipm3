@@ -3,13 +3,18 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ChartSixDataService {
+export class ChartDataService {
 
   constructor(private http: Http) { }
 
-  getChartData() {
+  getSixChartData() {
   	return this.http
-  	.get('./assets/data/chart.json')
+  	.get('./assets/data/chart-six.json')
+  	.map(response => response.json());
+  }
+  getSevenChartData() {
+  	return this.http
+  	.get('./assets/data/chart-seven.json')
   	.map(response => response.json());
   }
 }

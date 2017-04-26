@@ -156,8 +156,8 @@
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
-	-webkit-transition: width 0.5s 0.3s, visibility 0s 0.8s;
-	transition: width 0.5s 0.3s, visibility 0s 0.8s;
+	-webkit-transition: width 0s 0s, visibility 0s 0.8s,opacity 0s 0.3s;
+	transition: width 0s 0s, visibility 0s 0.8s,opacity 0s 0.3s;
 	z-index: 10;
 }
 
@@ -170,7 +170,6 @@
 	background: url('/assets/images/background_menu.jpg') no-repeat center center;
 	background-size:cover;
 }
-
 .overlay-door nav {
 	position: absolute;
 	left: 50%;
@@ -188,8 +187,8 @@
 .overlay-door.open nav,
 .overlay-door.open .overlay-close {
 	opacity: 1;
-	-webkit-transition-delay: 0.5s;
-	transition-delay: 0.5s;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
 }
 
 .overlay-door.close nav,

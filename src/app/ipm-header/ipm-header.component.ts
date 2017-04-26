@@ -48,11 +48,13 @@ export class IpmHeaderComponent implements OnInit {
   toggleMenu() {
     let _body = document.getElementsByTagName('body');
     if (!this.isMenuOpen) {
-      this.isMenuOpen = true;
       _body[0].style.overflowY = "hidden";
+      this.isMenuOpen = true;
+      
     } else {
-      this.isMenuOpen = false;
       _body[0].style.overflowY = "initial";
+      this.isMenuOpen = false;
+      
     }
     this.updateLogos();
   }

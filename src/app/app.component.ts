@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -7,7 +7,8 @@ import 'rxjs/add/operator/filter';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  
 	constructor( private router: Router ) {
     this.router.events
     .filter(event => event instanceof NavigationStart)
@@ -16,19 +17,24 @@ export class AppComponent {
     this.router.events
     .filter(event => event instanceof NavigationEnd)
     .subscribe(this._endTransition)
-
-		// this.router.events
-		// .filter(event => event instanceof NavigationEnd)
-		// .subscribe(event => {
-  //      window.scroll(0, 0);
-  //   });
+    
 	}
 
-	_startTransition() {
+  ngOnInit() {
+
+  }
+  
+
+	_startTransition(event) {
 		window.scroll(0, 0);
+
 	}
 
 	_endTransition() {
 
 	}
+
+  updateLogos() {
+
+  }
 }

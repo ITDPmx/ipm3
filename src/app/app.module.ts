@@ -10,7 +10,8 @@ import { IpmLandingComponent } from './ipm-landing/ipm-landing.component';
 import { IpmResultsComponent } from './ipm-results/ipm-results.component';
 import { IpmFooterComponent } from './ipm-footer/ipm-footer.component';
 import { ChartOneComponent } from './charts/chart-one/chart-one.component';
-import { ChartSixDataService } from './chart.data.service';
+import { ChartDataService } from './chart.data.service';
+import { MapService } from './map.service';
 
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { ChartModule } from 'angular2-highcharts';
@@ -20,6 +21,8 @@ import { ChartThreeComponent } from './charts/chart-three/chart-three.component'
 import { ChartFourComponent } from './charts/chart-four/chart-four.component';
 import { ChartFiveComponent } from './charts/chart-five/chart-five.component';
 import { ChartSixComponent } from './charts/chart-six/chart-six.component';
+import { ChartSevenComponent } from './charts/chart-seven/chart-seven.component';
+import { IpmMapComponent } from './ipm-map/ipm-map.component';
 
 export declare let require: any;
 const Highcharts = require('highcharts');
@@ -43,6 +46,10 @@ const routes = [
   {
     path: 'resultados',
     component: IpmResultsComponent
+  },
+  {
+    path: 'mapa',
+    component: IpmMapComponent
   }
 ];
 
@@ -58,7 +65,9 @@ const routes = [
     ChartThreeComponent,
     ChartFourComponent,
     ChartFiveComponent,
-    ChartSixComponent
+    ChartSixComponent,
+    ChartSevenComponent,
+    IpmMapComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +78,8 @@ const routes = [
     ChartModule
   ],
   providers: [
-    ChartSixDataService,
+    ChartDataService,
+    MapService,
     {
       provide: HighchartsStatic,
       useFactory: highchartsFactory

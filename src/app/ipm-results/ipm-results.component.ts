@@ -1,5 +1,5 @@
 import { Component, OnInit, Output} from '@angular/core';
-
+import {NgsRevealModule} from 'ng-scrollreveal';
 export declare let require: any;
 const Chart = require('highcharts');
 @Component({
@@ -15,10 +15,13 @@ export class IpmResultsComponent implements OnInit {
 	private ChartFour: object;
 	private ChartFive: object;
 	private ChartSix: object;
-	private yearActive: string;
+	private ChartSeven: object;
+	private sixYearActive: string;
+	private sevenYearActive: string;
 
 	constructor() {
-		this.yearActive = "2011";
+		this.sixYearActive = "2011";
+		this.sevenYearActive = "2011";
 
 		this.ChartOne = {
 			chart: {
@@ -132,7 +135,7 @@ export class IpmResultsComponent implements OnInit {
 				}
 			},
 			tooltip: {
-				pointFormat: '<span style="color:#545454">{series.name}</span>: <b>{point.percentage:.1f}%</b><br/>',
+				pointFormat: '<span style="color:#545454">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
 				shared: true
 			},
 			plotOptions: {
@@ -470,14 +473,93 @@ export class IpmResultsComponent implements OnInit {
 			colors: [],
 			series: []
 		}
+
+		this.ChartSeven = {
+			chart: {
+				type: 'bar',
+				spacingBottom: 25,
+				spacingTop: 50,
+				spacingLeft: 25,
+				spacingRight: 25,
+				height: 1200
+			},
+			title: {
+				text: ''
+			},
+			tooltip: {
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
+				shared: true
+			},
+			xAxis: {
+				categories: [],
+				title: {
+					text: 'Zonas Metropolitanas'
+				},
+				crosshair: {
+					color:"rgba(57, 57, 58, 0.25)",
+					zIndex: 10
+				}
+			},
+			yAxis: {
+				min: 0,
+				max:100,
+				title: {
+					text: 'Porcentaje'
+				},
+				labels: {
+					formatter: function(){
+						return parseInt(this.value) + '%';
+					}
+				}
+			},
+			legend: {
+				itemDistance: 40,
+				itemStyle: {
+					"fontSize": "16px"
+				},
+				reversed: true
+			},
+			plotOptions: {
+				series: {
+					stacking: 'normal',
+					dataLabels: {
+						enabled: true,
+						color: 'black',
+						formatter:function() {
+							return parseInt(this.percentage) + '%';
+						}
+					}
+				}
+			},
+	 		navigation: {
+ 		    buttonOptions: {
+ 		    	align:"right",
+	        height: 40,
+	        width: 48,
+	        symbolSize: 24,
+	        symbolX: 23,
+	        symbolY: 21,
+	        symbolStrokeWidth: 2,
+	        x: 20,
+	        y:-40
+ 		    }
+	 		},
+			colors: [],
+			series: []
+		}
 	}
 
 	ngOnInit() {
 		
 	}
 
-	setChartYear(yearId) {
+	setSixChartYear(yearId) {
 		var id = yearId;
-		this.yearActive = id;
+		this.sixYearActive = id;
+	}
+
+	setSevenChartYear(yearId) {
+		var id = yearId;
+		this.sevenYearActive = id;
 	}
 }

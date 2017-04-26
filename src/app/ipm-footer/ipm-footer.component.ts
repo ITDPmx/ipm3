@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -7,7 +7,8 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./ipm-footer.component.css']
 })
 export class IpmFooterComponent implements OnInit {
-	private isFooter: Boolean;
+	private isFooter: boolean;
+  @ViewChild('footer') footer;
   constructor( private router: Router) { }
 
   ngOnInit() {
@@ -19,7 +20,7 @@ export class IpmFooterComponent implements OnInit {
   }
 
   isFooterInView() {
-    if (this.router.url === '/') {
+    if (this.router.url === '/' || this.router.url === '/reusltados') {
       this.isFooter = true;
     } else {
       this.isFooter = false;

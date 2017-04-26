@@ -1,0 +1,29 @@
+.m-map {
+	background: white;
+	height: 100%;
+	width: 100%;
+}
+.m-basemap{ 
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	z-index: 4;
+}
+@media screen and (min-width: 568px) {
+	.m-basemap{ 
+		left: 100%;
+	}
+}
+@media screen and (min-width: 768px) {
+	.m-basemap{ 
+		left: calc(100% - 250px);
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.m-basemap {
+		left: calc(100% - 500px)
+	}
+}
