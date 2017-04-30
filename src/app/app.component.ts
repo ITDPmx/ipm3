@@ -8,7 +8,6 @@ import 'rxjs/add/operator/filter';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  
 	constructor( private router: Router ) {
     this.router.events
     .filter(event => event instanceof NavigationStart)

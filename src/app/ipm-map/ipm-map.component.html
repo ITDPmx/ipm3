@@ -1,3 +1,11 @@
 <section class="m-map">
 	<div #map class="m-basemap" id="map"></div>
+	<div class="m-sidebar" #sideBar>
+		<div class="m-sidebar__zm background-gray-smooth">
+			<h2 class="m-small-title m-small-title--in-sidebar">Zona Metropolitana</h2>
+		</div>
+		<div class="m-sidebar__infra">
+			<chart-infrastructure [selectedZm]="selectedZm" [updateChartWidth]="chartWidth" [options]="ChartInfra"></chart-infrastructure>
+		</div>
+	</div>
 </section>

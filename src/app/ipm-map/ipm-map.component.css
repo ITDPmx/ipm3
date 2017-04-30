@@ -11,19 +11,90 @@
 	left: 100%;
 	z-index: 4;
 }
+.m-sidebar {
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	width: 100%;
+	z-index:8;
+	background:white;
+}
+.m-sidebar__zm {
+	padding-top: 53px;
+}
+.m-sidebar__infra {
+	display: block;
+	height: calc(100% - 124px);
+	overflow-y: auto;
+	@include respond-to('large') {
+		height: calc(100% - 24px);
+	}
+}
+.m-sidebar.leaflet-control {
+	padding: 0;
+}
+
+.leaflet-sidebar > .close{
+	background: transparent !important;
+	right: 20px !important;
+	top: 10px !important;
+}
+
+.leaflet-sidebar {
+	z-index: 9 !important;
+}
+
+.m-sidebar__zm {
+	padding: 4px;
+	text-align:center;
+}
+
+.m-medium-title--in-sidebar,
+.m-small-title--in-sidebar {
+	margin: 0;
+}
+
+.m-small-title--in-sidebar {
+	font-size: 18px
+}
+
+.m-medium-title--in-sidebar {
+	font-size: 24px;
+}
+
+.m-sidebar__infra {
+	padding: 15px;
+}
+.m-sidebar__zm-select {
+	width: 100%;
+	margin: 5px auto 0px;
+}
 @media screen and (min-width: 568px) {
 	.m-basemap{ 
 		left: 100%;
+	}
+	.m-sidebar {
+		width: 100%;
 	}
 }
 @media screen and (min-width: 768px) {
 	.m-basemap{ 
 		left: calc(100% - 250px);
 	}
+	.m-sidebar {
+		width: calc(100% - 250px)
+	}
 }
 
 @media screen and (min-width: 992px) {
 	.m-basemap {
 		left: calc(100% - 500px)
+	}
+	.m-sidebar {
+		width: calc(100% - 500px)
+	}
+	.m-sidebar__zm {
+		padding-top: initial;
 	}
 }

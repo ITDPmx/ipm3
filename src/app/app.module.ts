@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { NgsRevealModule } from 'ng-scrollreveal';
+import { ChartModule } from 'angular2-highcharts';
+
 import { AppComponent } from './app.component';
 import { IpmHeaderComponent } from './ipm-header/ipm-header.component';
 import { IpmLandingComponent } from './ipm-landing/ipm-landing.component';
 import { IpmResultsComponent } from './ipm-results/ipm-results.component';
 import { IpmFooterComponent } from './ipm-footer/ipm-footer.component';
-import { ChartOneComponent } from './charts/chart-one/chart-one.component';
 import { ChartDataService } from './chart.data.service';
 import { MapService } from './map.service';
 
-import { NgsRevealModule } from 'ng-scrollreveal';
-import { ChartModule } from 'angular2-highcharts';
+import { ChartOneComponent } from './charts/chart-one/chart-one.component';
 import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 import { ChartTwoComponent } from './charts/chart-two/chart-two.component';
 import { ChartThreeComponent } from './charts/chart-three/chart-three.component';
@@ -23,6 +24,10 @@ import { ChartFiveComponent } from './charts/chart-five/chart-five.component';
 import { ChartSixComponent } from './charts/chart-six/chart-six.component';
 import { ChartSevenComponent } from './charts/chart-seven/chart-seven.component';
 import { IpmMapComponent } from './ipm-map/ipm-map.component';
+import { ChartInfrastructureComponent } from './charts/chart-infrastructure/chart-infrastructure.component';
+import { ChartSplitComponent } from './charts/chart-split/chart-split.component';
+import { ChartYearComponent } from './charts/chart-year/chart-year.component';
+import { ChartPopulationComponent } from './charts/chart-population/chart-population.component';
 
 export declare let require: any;
 const Highcharts = require('highcharts');
@@ -67,7 +72,11 @@ const routes = [
     ChartFiveComponent,
     ChartSixComponent,
     ChartSevenComponent,
-    IpmMapComponent
+    IpmMapComponent,
+    ChartInfrastructureComponent,
+    ChartSplitComponent,
+    ChartYearComponent,
+    ChartPopulationComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,7 @@ export class ChartSixComponent implements OnInit {
 	}
 
 	ngOnChanges() {
+		console.log(this.sixChartUpdateYear);
 		if (this.sixChartUpdateYear && this._chart) {
 			this.loadChartData(false);
 		}
