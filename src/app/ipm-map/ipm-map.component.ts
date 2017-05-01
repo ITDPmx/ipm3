@@ -235,7 +235,7 @@ export class IpmMapComponent implements OnInit {
           y: -10
         }
       },
-      colors: ["#41AD49","#70A4D8","#E96021","#F9A01B","#71acd0"],
+      colors: ["#6dd277","#37bfd7","#E96021","#F9A01B","#71acd0"],
       series: [
         {
           name: '2011',
@@ -336,7 +336,7 @@ export class IpmMapComponent implements OnInit {
           y: -10
         }
       },
-      colors: ["#71acd0","#41AD49","#71d0c0","#1f6cb2", "#E96021", "#F9A01B"],
+      colors: ["#6dd277","#37bfd7"],
       series: [
         {
           data: [],
@@ -549,7 +549,12 @@ export class IpmMapComponent implements OnInit {
 
   styleZM() {
     return {
-      fillColor: '#000',
+      color:'#263238',
+      dashArray: "2",
+      fillColor: '#6dd277',
+      fillOpacity: 0.75,
+      opacity: 1,
+      weight: 2
     }
   }
 
@@ -560,7 +565,7 @@ export class IpmMapComponent implements OnInit {
   highlightFeatureZM(e) {
     var layer = e.layer;
     layer.setStyle({
-      color:'#000',
+      color:'#263238',
       dashArray: 2,
       fillColor: '#000',
       fillOpacity: 0.5,

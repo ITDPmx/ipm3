@@ -37,7 +37,7 @@ export class ChartFourComponent implements OnInit {
 				data: [16062.02,10282.16,8437.01,10071.45,9076.63]
 			}
 		];
-		this._colors = ["#41AD49","#70A4D8","#E96021","#F9A01B","#71acd0"];
+		this._colors = ["#9dd477","#98cfff","#fa8b7d","#fdd625","#9FA8DA","#80CBC4"];
 	}
 
 	ngOnInit() {

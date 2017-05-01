@@ -24,7 +24,7 @@ export class ChartFiveComponent implements OnInit {
 				 data: [32, 43, 25]
 			}
 		];
-		this._colors = ["#41AD49","#70A4D8","#E96021"];
+		this._colors = ["#9dd477","#98cfff","#fa8b7d"];
 	}
 
 	ngOnInit() {

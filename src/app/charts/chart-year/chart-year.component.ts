@@ -13,7 +13,7 @@ export class ChartYearComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.options["colors"] = ["#41AD49","#70A4D8","#E96021","#F9A01B","#71acd0"];
+  	this.options["colors"] = ["#9dd477","#98cfff","#fa8b7d","#fdd625","#80CBC4"];
   }
 
   ngAfterViewInit() {

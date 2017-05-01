@@ -30,7 +30,8 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 600
+				height: 550,
+				plotAreaHeight: 550
 			},
 			title: {
 				text: ''
@@ -118,8 +119,8 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 650,
-				plotAreaHeight: 650
+				height: 550,
+				plotAreaHeight: 550
 			},
 			title: {
 				text: ''
@@ -212,7 +213,8 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 600
+				height: 550,
+				plotAreaHeight: 550
 			},
 			title: {
 				text: ''
@@ -251,7 +253,7 @@ export class IpmResultsComponent implements OnInit {
 				valueSuffix: ' millones',
 				valueDecimals: 2,
 				valuePrefix: '$',
-				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.y}</b><br/>',
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <br><b>{point.y}</b><br/>',
 			},
 			plotOptions: {
 				area: {
@@ -294,7 +296,8 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 600
+				height: 550,
+				plotAreaHeight: 550
 			},
 			title: {
 				text: ''
@@ -330,7 +333,7 @@ export class IpmResultsComponent implements OnInit {
 				split: true,
 				valueSuffix: ' millones',
 				valuePrefix: '$',
-				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.y}</b><br/>',
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <br><b>{point.y}</b><br/>',
 			},
 			plotOptions: {
 				area: {
@@ -374,7 +377,8 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 500
+				height: 500,
+				plotAreaHeight: 500
 			},
 			title: {
 				text: ''
@@ -501,13 +505,23 @@ export class IpmResultsComponent implements OnInit {
 			plotOptions: {
 				series: {
 					stacking: 'normal',
+					shadow: false,
 					dataLabels: {
 						enabled: true,
-						color: 'black',
+						borderWidth: 0,
+						style: {
+						  color: "#000",
+						  fontSize: "12px",
+						  shadow: false,
+						  textOutline: "",
+						  fontWeight: '400'
+						},
 						formatter:function() {
 							return parseInt(this.percentage) + '%';
 						}
-					}
+					},
+					groupPadding: 0,
+					crisp: true
 				}
 			},
 	 		navigation: {
@@ -540,6 +554,12 @@ export class IpmResultsComponent implements OnInit {
 				text: ''
 			},
 			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px",
+				},
 				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
 				shared: true
 			},
@@ -577,11 +597,20 @@ export class IpmResultsComponent implements OnInit {
 					stacking: 'normal',
 					dataLabels: {
 						enabled: true,
-						color: 'black',
+						borderWidth: 0,
+						style: {
+						  color: "#000",
+						  fontSize: "12px",
+						  shadow: false,
+						  textOutline: "",
+						  fontWeight: '400'
+						},
 						formatter:function() {
 							return parseInt(this.percentage) + '%';
 						}
-					}
+					},
+					groupPadding: 0,
+					crisp: true
 				}
 			},
 	 		navigation: {

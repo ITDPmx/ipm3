@@ -20,7 +20,7 @@ export class ChartSevenComponent implements OnInit {
 
 	ngOnInit() {
 		this.options["title"].text = this.sevenChartUpdateYear;
-		this.options["colors"] = ["#41AD49","#70A4D8"];
+		this.options["colors"] = ["#9dd477","#98cfff"];
 		this.loadChartData(true);
 	}
 
