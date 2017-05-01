@@ -60,6 +60,12 @@ export class IpmResultsComponent implements OnInit {
 				}
 			},
 			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "14px",
+				},
 				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
 				shared: false
 			},
@@ -67,10 +73,17 @@ export class IpmResultsComponent implements OnInit {
 				column: {
 					stacking: 'percent',
 					dataLabels: {
+						borderColor: undefined,
 						enabled: true,
-						color: 'white',
+						color: '#37474F',
 						formatter:function() {
 							return parseInt(this.percentage) + '%';
+						},
+						style: {
+							fontSize: "14px",
+							shadow: false,
+							textOutline: "",
+							fontWeight: 'bold'
 						}
 					}
 				}
@@ -105,7 +118,8 @@ export class IpmResultsComponent implements OnInit {
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 600
+				height: 650,
+				plotAreaHeight: 650
 			},
 			title: {
 				text: ''
@@ -135,7 +149,13 @@ export class IpmResultsComponent implements OnInit {
 				}
 			},
 			tooltip: {
-				pointFormat: '<span style="color:#545454">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "14px",
+				},
+				pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
 				shared: true
 			},
 			plotOptions: {
@@ -143,9 +163,15 @@ export class IpmResultsComponent implements OnInit {
 					stacking: 'percent',
 					dataLabels: {
 						enabled: true,
-						color: 'white',
+						color: '#37474F',
 						formatter:function() {
 							return parseInt(this.percentage) + '%';
+						},
+						style: {
+							fontSize: "14px",
+							shadow: false,
+							textOutline: "",
+							fontWeight: 'bold'
 						}
 					}
 				}
@@ -215,10 +241,17 @@ export class IpmResultsComponent implements OnInit {
 				}
 			},
 			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px",
+				},
 				split: true,
 				valueSuffix: ' millones',
 				valueDecimals: 2,
 				valuePrefix: '$',
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.y}</b><br/>',
 			},
 			plotOptions: {
 				area: {
@@ -288,8 +321,16 @@ export class IpmResultsComponent implements OnInit {
 				}
 			},
 			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px"
+				},
 				split: true,
-				valueSuffix: ' millones'
+				valueSuffix: ' millones',
+				valuePrefix: '$',
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.y}</b><br/>',
 			},
 			plotOptions: {
 				area: {
@@ -300,7 +341,7 @@ export class IpmResultsComponent implements OnInit {
 						lineWidth: 1,
 						lineColor: '#666666'
 					},
-					format: '{point.y:.1f}%'
+					format: '${point.y:.1f}%'
 				}
 			},
 			navigation: {
@@ -382,8 +423,14 @@ export class IpmResultsComponent implements OnInit {
 				}
 			},
 			tooltip: {
-					pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.y}</b>{point.percentage}%</b><br/>',
-					shared: true
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px",
+				},
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.y}</b>{point.percentage}%</b><br/>',
+				shared: true
 			},
 			plotOptions: {
 				series: {
@@ -413,6 +460,12 @@ export class IpmResultsComponent implements OnInit {
 				text: ''
 			},
 			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px",
+				},
 				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
 				shared: true
 			},

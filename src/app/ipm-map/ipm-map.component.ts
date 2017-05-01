@@ -18,6 +18,9 @@ const zm = window["zmData"];
 
 export class IpmMapComponent implements OnInit {
   private ChartInfra: object;
+  private ChartSplit: object;
+  private ChartYear: object;
+  private ChartPopulation: object;
   public map: any;
   private _zm:any;
   _getDataChart: any;
@@ -159,41 +162,38 @@ export class IpmMapComponent implements OnInit {
     this.ChartInfra = {
       chart:{
         type: 'bar',
-        height: 500
+        height: 625,
+        plotAreaHeight: 625
       },
       title: {
           text: 'Inversión por tipo de infraestructura'
       },
       xAxis: {
-          categories: [ 'Infraestructura Peatonal', 'Infraestructura Ciclista', 'Espacio Público', 'Transporte Público', 'Infraestructura Vehicular', 'Pavimentación'],
-          title: {
-              text: ''
-          },
-          labels: {
-            useHTML: true,
-            formatter: function () {
-                return {
-                  'Infraestructura Peatonal': '<i class="ipm-pedestrian"></i>',
-                  'Infraestructura Ciclista': '<i class="ipm-bicycle"></i>',
-                  'Espacio Público': '<i class="ipm-public"></i>',
-                  'Transporte Público': '<i class="ipm-transport"></i>',
-                  'Infraestructura Vehicular': '<i class="ipm-car"></i>',
-                  'Pavimentación': '<i class="ipm-paving"></i>'
-              }[this.value]; 
-            }
+        categories: [ 'Infraestructura Peatonal', 'Infraestructura Ciclista', 'Espacio Público', 'Transporte Público', 'Infraestructura Vehicular', 'Pavimentación'],
+        title: {
+            text: ''
+        },
+        labels: {
+          useHTML: true,
+          formatter: function () {
+              return {
+                'Infraestructura Peatonal': '<i class="ipm-pedestrian"></i>',
+                'Infraestructura Ciclista': '<i class="ipm-bicycle"></i>',
+                'Espacio Público': '<i class="ipm-public"></i>',
+                'Transporte Público': '<i class="ipm-transport"></i>',
+                'Infraestructura Vehicular': '<i class="ipm-car"></i>',
+                'Pavimentación': '<i class="ipm-paving"></i>'
+            }[this.value]; 
           }
+        },
+        crosshair: true
       },
       yAxis: {
-          min: 0,
-          max: 100,
-          title: {
-              text: ''
-          },
-          labels: {
-            formatter: function(){
-              return parseInt(this.value) + '%';
-            }
-          }
+        min: 0,
+        max: 100,
+        title: {
+            text: ''
+        }
       },
       legend:{
         itemDistance: 15,
@@ -202,16 +202,24 @@ export class IpmMapComponent implements OnInit {
         }
       },
       plotOptions: {
-          bar: {
-              dataLabels: {
-                enabled: true,
-                format: '{point.y:.1f}%'
-              }
+        bar: {
+          dataLabels: {
+            enabled: true,
+            format: '{point.y:.1f}%'
           }
+        },
+        series: {
+          groupPadding: 0.075
+        }
       },
       tooltip: {
+        backgroundColor: "#263238",
+        borderWidth: 0,
+        style: {
+          color: "white"
+        },
         formatter: function() {
-          return '<span style="font-weight: bold;">'+this.key+'<br/><b>'+ this.series.name +'</span></b>: '+this.point.y+'%';
+          return '<span style="font-weight: 400;">'+this.key+'<br/><b style="font-weight: 400;color:{series.color}">'+ this.series.name +'</span></b>: <strong>'+this.point.y+'%</strong>';
         }
       },
       navigation: {
@@ -251,19 +259,264 @@ export class IpmMapComponent implements OnInit {
         }
       ]
     }
+    this.ChartSplit = {
+      chart: {
+        type: 'bar',
+        height: 625,
+        plotAreaHeight: 625
+      },
+      title: {
+          text: 'Reparto modal'
+      },
+      tooltip: {
+        backgroundColor: "#263238",
+        borderWidth: 0,
+        style: {
+          color: "white"
+        },
+        shadow: false,
+        formatter: function() {
+          return '<span style="font-weight: 400;">'+this.key+'<br/><b style="font-weight: 400;">'+ this.series.name +'</span></b>: <strong>'+this.point.y+'%</strong>';
+        }
+      },
+      xAxis: {
+        categories: ['Caminando', 'Bicicleta', 'Transporte público', 'Transporte Laboral', 'Vehículo', 'Otro'],
+        title: {
+            text: ''
+        },
+        labels: {
+          useHTML: true,
+          formatter: function () {
+              return {
+                'Caminando': '<i class="ipm-pedestrian"></i>',
+                'Bicicleta': '<i class="ipm-bicycle"></i>',
+                'Transporte público': '<i class="ipm-transport"></i>',
+                'Transporte Laboral': '<i class="ipm-transport-lab"></i>',
+                'Vehículo': '<i class="ipm-car"></i>',
+                'Otro': '<i class="ipm-other"></i>'
+            }[this.value]; 
+          }
+        }  ,
+        crosshair: true
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Número de viajes',
+          }
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true,
+            format: '{point.y:.0f}%'
+          }
+        },
+        series: {
+          groupPadding: 0.075
+        }
+      },
+      legend:{
+        itemDistance: 15,
+        itemStyle: {
+          "fontSize": "14px"
+        },
+        layout: 'horizontal'
+      },
+      navigation: {
+        buttonOptions: {
+          align:"right",
+          height: 40,
+          width: 48,
+          symbolSize: 24,
+          symbolX: 23,
+          symbolY: 21,
+          symbolStrokeWidth: 2,
+          x: 10,
+          y: -10
+        }
+      },
+      colors: ["#71acd0","#41AD49","#71d0c0","#1f6cb2", "#E96021", "#F9A01B"],
+      series: [
+        {
+          data: [],
+          name: 'Viajes a la escuela',
+        },
+        {
+          data: [],
+          name: 'Viajes al trabajo',
+        }
+      ]
+    }
+    this.ChartYear = {
+      chart: {
+        type: 'column',
+        height: 300,
+        plotAreaHeight: 300,
+        inverted: true
+      },
+      title: {
+          text: 'Inversión por año'
+      },
+      xAxis: {
+          type: 'category',
+          title: {
+            text: 'Año'
+          },
+          crosshair: true
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: '(millones de pesos)',
+          align: 'high'
+        }
+      },
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+            format: '${point.y:,.2f}'
+          },
+          pointWidth: 25,
+          pointPadding: 0,
+          groupPadding: 0
+        }
+      },
+      legend: {
+          enabled: false
+      },
+      tooltip: {
+          enabled: false
+      },
+      navigation: {
+        buttonOptions: {
+          align:"right",
+          height: 40,
+          width: 48,
+          symbolSize: 24,
+          symbolX: 23,
+          symbolY: 21,
+          symbolStrokeWidth: 2,
+          x: 10,
+          y: -10
+        }
+      },
+      colors: ["#41AD49","#70A4D8","#E96021","#F9A01B","#71acd0"],
+      series: [
+        {
+          nam2: "Inversión",
+          colorByPoint: true,
+          data:[
+            {
+              data: [],
+              name: '2011'
+            },{
+              data: [],
+              name: '2012'
+            },{
+              data: [],
+              name: '2013'
+            },{
+              data: [],
+              name: '2014'
+            },{
+              data: [],
+              name: '2015'
+            }
+          ]
+        }
+      ]
+    }
+    this.ChartPopulation = {
+      chart: {
+        type: 'column',
+        height: 300,
+        plotAreaHeight: 300,
+        inverted: true
+      },
+      title: {
+          text: 'Crecimiento poblacional'
+      },
+      xAxis: {
+          type: 'category',
+          title: {
+            text: 'Año'
+          },
+          crosshair: true
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: '(millones de habitantes)',
+          align: 'high'
+        }
+      },
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+            format: '{point.y:,.2f}'
+          },
+          pointWidth: 25,
+          pointPadding: 0,
+          groupPadding: 0
+        }
+      },
+      legend: {
+          enabled: false
+      },
+      tooltip: {
+          enabled: false
+      },
+      navigation: {
+        buttonOptions: {
+          align:"right",
+          height: 40,
+          width: 48,
+          symbolSize: 24,
+          symbolX: 23,
+          symbolY: 21,
+          symbolStrokeWidth: 2,
+          x: 10,
+          y: -10
+        }
+      },
+      colors: ["#41AD49","#70A4D8","#E96021","#F9A01B"],
+      series: [
+        {
+          nam2: "Población",
+          colorByPoint: true,
+          data:[
+            {
+              data: [],
+              name: '1990'
+            },{
+              data: [],
+              name: '2000'
+            },{
+              data: [],
+              name: '2010'
+            },{
+              data: [],
+              name: '2015'
+            }
+          ]
+        }
+      ]
+    }
     this._getDataChart = Observable.create( observer => {
       observer.next(zm.features);
     });
   }
 
-  @HostListener('window:resize') onResize(e){
-    this.updateChartWidth(this._sideBar.nativeElement.clientWidth / 2);
-  };
+  // @HostListener('window:resize') onResize(e){
+  //   this.updateChartWidth(this._sideBar.nativeElement.clientWidth / 2);
+  // };
 
   ngOnInit() {
     this.map = L.map('map').setView([19.47152819193908, -99.05582722634055],9);
     this.mapService.layer.addTo(this.map);
-    this.ChartInfra["chart"]["width"] = this._sideBar.nativeElement.clientWidth / 2;
     this.loadLayer();
   }
 

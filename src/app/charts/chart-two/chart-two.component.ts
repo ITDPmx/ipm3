@@ -38,7 +38,7 @@ export class ChartTwoComponent implements OnInit {
 			}
 		];
 		this._categories = ['2011', '2012', '2013', '2014', '2015'];
-		this._colors = ["#41AD49","#70A4D8","#E96021","#F9A01B","#71acd0", "#69A6A5"];
+		this._colors = ["#81C784","#82B1FF","#FF6D00","#FFB300","#71acd0", "#69A6A5"];
 	}
 
 	ngOnInit() {

@@ -25,7 +25,6 @@ export class ChartSixComponent implements OnInit {
 	}
 
 	ngOnChanges() {
-		console.log(this.sixChartUpdateYear);
 		if (this.sixChartUpdateYear && this._chart) {
 			this.loadChartData(false);
 		}
@@ -50,6 +49,7 @@ export class ChartSixComponent implements OnInit {
 				});
 			}
 		});
+
 		this._getYearSeries.subscribe(data => {
 			this._chart["xAxis"][0].setCategories(data.categories);
 		});

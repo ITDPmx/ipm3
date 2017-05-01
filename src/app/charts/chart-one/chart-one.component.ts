@@ -21,7 +21,7 @@ export class ChartOneComponent implements OnInit {
 				data: [29,27,35,42,32]
 			}
 		];
-		this._colors = ["#6F8FC9","#71B7BF"];
+		this._colors = ["#9FA8DA","#80CBC4"];
 	}
 
 	ngOnInit() {

@@ -27,9 +27,9 @@
 	display: block;
 	height: calc(100% - 124px);
 	overflow-y: auto;
-	@include respond-to('large') {
-		height: calc(100% - 24px);
-	}
+}
+.m-sidebar__infra-row {
+	
 }
 .m-sidebar.leaflet-control {
 	padding: 0;
@@ -96,5 +96,8 @@
 	}
 	.m-sidebar__zm {
 		padding-top: initial;
+	}
+	.m-sidebar__infra {
+		height: calc(100% - 24px);
 	}
 }

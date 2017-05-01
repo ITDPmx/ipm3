@@ -20,7 +20,7 @@ export class ChartThreeComponent implements OnInit {
 				data: [67848.72,67946.92,39233.34,28009.57,38475.24]
 			}
 		];
-		this._colors = ["#6F8FC9","#71B7BF"];
+		this._colors = ["#9FA8DA","#80CBC4"];
 	}
 
 	ngOnInit() {
