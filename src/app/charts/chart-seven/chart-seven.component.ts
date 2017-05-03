@@ -42,12 +42,8 @@ export class ChartSevenComponent implements OnInit {
 				} 
 				else {
 					this._chart.setTitle({text:this.sevenChartUpdateYear});
-					this._chart.series[0].update({
-						data: data.series[0].data
-					});
-					this._chart.series[1].update({
-						data: data.series[1].data
-					});
+					this._chart.series[0].setData(data.series[0].data);
+					this._chart.series[1].setData(data.series[1].data);
 				}
 			}
 		});

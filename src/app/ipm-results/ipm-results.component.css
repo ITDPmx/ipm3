@@ -3,7 +3,7 @@
 	padding: 80px 0px;
 }
 .m-results__chart {
-	padding: 20px 0px 80px;
+	padding: 20px 0px 50px;
 }
 
 .m-results__chart-container {
@@ -65,6 +65,12 @@
 	font-size: 20px;
 	font-weight: 400;
 	margin: 60px 0px 30px;
+}
+.m-landing__footer-disclaimer {
+    color: #545454;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 10px;
 }
 @media screen and (min-width: 768px) {
 	.m-results {

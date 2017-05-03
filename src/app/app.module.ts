@@ -28,6 +28,10 @@ import { ChartInfrastructureComponent } from './charts/chart-infrastructure/char
 import { ChartSplitComponent } from './charts/chart-split/chart-split.component';
 import { ChartYearComponent } from './charts/chart-year/chart-year.component';
 import { ChartPopulationComponent } from './charts/chart-population/chart-population.component';
+import { ChartExercisedComponent } from './charts/chart-exercised/chart-exercised.component';
+import { ChartPercentageComponent } from './charts/chart-percentage/chart-percentage.component';
+import { ChartPercentageInvestmentComponent } from './charts/chart-percentage-investment/chart-percentage-investment.component';
+import { ChartInvestmentComponent } from './charts/chart-investment/chart-investment.component';
 
 export declare let require: any;
 const Highcharts = require('highcharts');
@@ -76,7 +80,11 @@ const routes = [
     ChartInfrastructureComponent,
     ChartSplitComponent,
     ChartYearComponent,
-    ChartPopulationComponent
+    ChartPopulationComponent,
+    ChartExercisedComponent,
+    ChartPercentageComponent,
+    ChartPercentageInvestmentComponent,
+    ChartInvestmentComponent
   ],
   imports: [
     BrowserModule,

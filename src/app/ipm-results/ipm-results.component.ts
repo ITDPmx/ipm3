@@ -16,12 +16,22 @@ export class IpmResultsComponent implements OnInit {
 	private ChartFive: object;
 	private ChartSix: object;
 	private ChartSeven: object;
+	private ChartEight: object;
+	private ChartNine: object;
+	private ChartTen: object;
+	private ChartEleven: object;
 	private sixYearActive: string;
 	private sevenYearActive: string;
+	private eightYearActive: string;
+	private nineYearActive: string;
+	private tenYearActive: string;
+	private elevenYearActive: string;
 
 	constructor() {
 		this.sixYearActive = "2011";
 		this.sevenYearActive = "2011";
+		this.eightYearActive = "2011";
+		this.nineYearActive = "2011";
 
 		this.ChartOne = {
 			chart: {
@@ -195,12 +205,6 @@ export class IpmResultsComponent implements OnInit {
 					x: 20,
 					y:-40
 				}
-			},
-			loading: {
-			hideDuration: 100,
-			labelStyle: { "fontWeight": "bold", "position": "relative", "top": "45%" },
-			showDuration: 100,
-			style: { "position": "absolute", "backgroundColor": "#ffffff", "opacity": 0.5, "textAlign": "center" },
 			},
 			colors: [],
 			series: []
@@ -629,6 +633,172 @@ export class IpmResultsComponent implements OnInit {
 			colors: [],
 			series: []
 		}
+
+		this.ChartEight = {
+			chart: {
+				type: 'column',
+				spacingBottom: 25,
+				spacingTop: 50,
+				spacingLeft: 25,
+				spacingRight: 25,
+				height: 550,
+				plotAreaHeight: 550
+			},
+			title: {
+				text: ''
+			},
+			xAxis: {
+				title: {
+					enabled: true,
+					text: 'Año'
+				}
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Millones de pesos a precios del 2012'
+				},
+				categories: [],
+				stackLabels: {
+					enabled: false,
+					style: {
+						fontWeight: 'bold'
+					}
+				},
+				labels: {
+					formatter: function(){
+						return "$" + (parseInt(this.value) / 1000) + "M";
+					}
+				}
+			},
+			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px",
+				},
+				split: false,
+				valueSuffix: ' millones',
+				valueDecimals: 2,
+				valuePrefix: '$',
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <br><b>{point.y}</b><br/>',
+			},
+			plotOptions: {
+				series: {
+					stacking: 'normal',
+					enabled:false
+				}
+			},
+			legend: {
+				itemDistance: 40,
+				itemStyle: {
+					"fontSize": "16px"
+				}
+			},
+			navigation: {
+				buttonOptions: {
+					align:"right",
+					height: 40,
+					width: 48,
+					symbolSize: 24,
+					symbolX: 23,
+					symbolY: 21,
+					symbolStrokeWidth: 2,
+					x: 20,
+					y:-40
+				}
+			},
+			colors: [],
+			series: []
+		};
+
+		this.ChartNine = {
+			chart: {
+				type: 'column',
+				spacingBottom: 25,
+				spacingTop: 50,
+				spacingLeft: 25,
+				spacingRight: 25,
+				height: 550,
+				plotAreaHeight: 550
+			},
+			title: {
+				text: ''
+			},
+			xAxis: {
+				title: {
+					enabled: true,
+					text: 'Año'
+				}
+			},
+			yAxis: {
+				min: 0,
+				title: {
+						text: 'Porcentajes'
+				},
+				stackLabels: {
+					enabled: true,
+					style: {
+						fontWeight: 'bold'
+					}
+				},
+				labels: {
+					formatter: function(){
+						return parseInt(this.value) + '%';
+					}
+				}
+			},
+			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "14px",
+				},
+				pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
+				shared: true
+			},
+			plotOptions: {
+				column: {
+					stacking: 'percent',
+					dataLabels: {
+						enabled: true,
+						color: '#37474F',
+						formatter:function() {
+							return parseInt(this.percentage) + '%';
+						},
+						style: {
+							fontSize: "14px",
+							shadow: false,
+							textOutline: "",
+							fontWeight: 'bold'
+						}
+					}
+				}
+			},
+			legend: {
+				itemDistance: 40,
+				itemStyle: {
+					"fontSize": "16px"
+				}
+			},
+			navigation: {
+				buttonOptions: {
+					align:"right",
+					height: 40,
+					width: 48,
+					symbolSize: 24,
+					symbolX: 23,
+					symbolY: 21,
+					symbolStrokeWidth: 2,
+					x: 20,
+					y:-40
+				}
+			},
+			colors: [],
+			series: []
+		};
 	}
 
 	ngOnInit() {
@@ -643,5 +813,25 @@ export class IpmResultsComponent implements OnInit {
 	setSevenChartYear(yearId) {
 		var id = yearId;
 		this.sevenYearActive = id;
+	}
+
+	setEightChartYear(yearId) {
+		var id = yearId;
+		this.eightYearActive = id;
+	}
+
+	setNineChartYear(yearId) {
+		var id = yearId;
+		this.nineYearActive = id;
+	}
+
+	setTenChartYear(yearId) {
+		var id = yearId;
+		this.tenYearActive = id;
+	}
+
+	setElevenChartYear(yearId) {
+		var id = yearId;
+		this.elevenYearActive = id;
 	}
 }

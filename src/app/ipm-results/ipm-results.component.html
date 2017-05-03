@@ -17,7 +17,7 @@
 					</div>
 				</div>
 				<div class="pure-u-1 pure-u-sm-24-24">
-					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Gasto total proveniente de fondos federales detinado a movilidad, 2011-2015 (Millones de pesos a precios de 2012)</h4>
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Gasto total proveniente de fondos federales destinado a movilidad, 2011-2015 (Millones de pesos a precios de 2012)</h4>
 					<div class="m-results__chart">
 						<chart-three [options]="ChartThree"></chart-three>
 					</div>
@@ -74,7 +74,48 @@
 						</ul>
 					</div>
 				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Monto ejercido en movilidad</h4>
+					<div class="m-results__chart six">
+						<ul class="m-list m-list--chart">
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2011' " (click)="setEightChartYear('2011')">2011</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2012' " (click)="setEightChartYear('2012')">2012</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2013' " (click)="setEightChartYear('2013')">2013</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2014' " (click)="setEightChartYear('2014')">2014</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2015' " (click)="setEightChartYear('2015')">2015</a></li>
+						</ul>
+						<chart-exercised [eightChartUpdateYear]="eightYearActive" [options]="ChartEight" class="eightChart"></chart-exercised>
+						<ul class="m-list m-list--chart">
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2011' " (click)="setEightChartYear('2011')">2011</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2012' " (click)="setEightChartYear('2012')">2012</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2013' " (click)="setEightChartYear('2013')">2013</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2014' " (click)="setEightChartYear('2014')">2014</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="eightYearActive === '2015' " (click)="setEightChartYear('2015')">2015</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="pure-u-1 pure-u-sm-24-24">
+					<h4 class="m-small-title m-small-title--in-results-graphics align-center">Distribución porcentual</h4>
+					<div class="m-results__chart six">
+						<ul class="m-list m-list--chart">
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2011' " (click)="setNineChartYear('2011')">2011</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2012' " (click)="setNineChartYear('2012')">2012</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2013' " (click)="setNineChartYear('2013')">2013</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2014' " (click)="setNineChartYear('2014')">2014</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2015' " (click)="setNineChartYear('2015')">2015</a></li>
+						</ul>
+						<chart-percentage [nineChartUpdateYear]="nineYearActive" [options]="ChartNine" class="nineChart"></chart-percentage>
+						<ul class="m-list m-list--chart">
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2011' " (click)="setNineChartYear('2011')">2011</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2012' " (click)="setNineChartYear('2012')">2012</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2013' " (click)="setNineChartYear('2013')">2013</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2014' " (click)="setNineChartYear('2014')">2014</a></li>
+							<li class="m-list--chart__item"><a class="m-list--chart__item-link" [class.active]="nineYearActive === '2015' " (click)="setNineChartYear('2015')">2015</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
+		<p class="m-landing__footer-disclaimer">Los datos aquí mostrados se actualizan continuamente, por lo que recomendamos verificar la metodología y las bases de datos disponibles en la sección de descargas</p>
 	</div>
 </section>
