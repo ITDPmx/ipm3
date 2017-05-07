@@ -24,6 +24,7 @@ export class IpmMapComponent implements OnInit {
   public ChartPopulation: object;
   public map: any;
   public _zm:any;
+  _getCurrentZm: any;
   _getDataChart: any;
   _getGeoJson: any;
   _zmGeoJson: any;
@@ -616,6 +617,7 @@ export class IpmMapComponent implements OnInit {
 
   zoomToFeatureZM(e) {
     this.map.fitBounds(e.layer.getBounds());
+    this._selectedId = this._zm["value"] = e.layer.feature.id;
     this.currentZm = e.layer.feature.properties.informacion;
   }
 
