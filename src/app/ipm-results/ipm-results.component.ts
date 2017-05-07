@@ -9,29 +9,31 @@ const Chart = require('highcharts');
 })
 
 export class IpmResultsComponent implements OnInit {
-	private ChartOne: object;
-	private ChartTwo: object;
-	private ChartThree: object;
-	private ChartFour: object;
-	private ChartFive: object;
-	private ChartSix: object;
-	private ChartSeven: object;
-	private ChartEight: object;
-	private ChartNine: object;
-	private ChartTen: object;
-	private ChartEleven: object;
-	private sixYearActive: string;
-	private sevenYearActive: string;
-	private eightYearActive: string;
-	private nineYearActive: string;
-	private tenYearActive: string;
-	private elevenYearActive: string;
+	public ChartOne: object;
+	public ChartTwo: object;
+	public ChartThree: object;
+	public ChartFour: object;
+	public ChartFive: object;
+	public ChartSix: object;
+	public ChartSeven: object;
+	public ChartEight: object;
+	public ChartNine: object;
+	public ChartTen: object;
+	public ChartEleven: object;
+	public sixYearActive: string;
+	public sevenYearActive: string;
+	public eightYearActive: string;
+	public nineYearActive: string;
+	public tenYearActive: string;
+	public elevenYearActive: string;
 
 	constructor() {
 		this.sixYearActive = "2011";
 		this.sevenYearActive = "2011";
 		this.eightYearActive = "2011";
 		this.nineYearActive = "2011";
+		this.tenYearActive = "2011";
+		this.elevenYearActive = "2011";
 
 		this.ChartOne = {
 			chart: {
@@ -651,7 +653,8 @@ export class IpmResultsComponent implements OnInit {
 				title: {
 					enabled: true,
 					text: 'Año'
-				}
+				},
+				crosshair: true
 			},
 			yAxis: {
 				min: 0,
@@ -730,7 +733,8 @@ export class IpmResultsComponent implements OnInit {
 				title: {
 					enabled: true,
 					text: 'Año'
-				}
+				},
+				crosshair: true
 			},
 			yAxis: {
 				min: 0,
@@ -775,6 +779,174 @@ export class IpmResultsComponent implements OnInit {
 							fontWeight: 'bold'
 						}
 					}
+				}
+			},
+			legend: {
+				itemDistance: 40,
+				itemStyle: {
+					"fontSize": "16px"
+				}
+			},
+			navigation: {
+				buttonOptions: {
+					align:"right",
+					height: 40,
+					width: 48,
+					symbolSize: 24,
+					symbolX: 23,
+					symbolY: 21,
+					symbolStrokeWidth: 2,
+					x: 20,
+					y:-40
+				}
+			},
+			colors: [],
+			series: []
+		};
+
+		this.ChartTen = {
+			chart: {
+				type: 'column',
+				spacingBottom: 25,
+				spacingTop: 50,
+				spacingLeft: 25,
+				spacingRight: 25,
+				height: 650,
+				plotAreaHeight: 650
+			},
+			title: {
+				text: ''
+			},
+			xAxis: {
+				title: {
+					enabled: true,
+					text: 'Año'
+				},
+				crosshair: true
+			},
+			yAxis: {
+				min: 0,
+				title: {
+						text: 'Porcentajes'
+				},
+				stackLabels: {
+					enabled: true,
+					style: {
+						fontWeight: 'bold'
+					}
+				},
+				labels: {
+					formatter: function(){
+						return parseInt(this.value) + '%';
+					}
+				}
+			},
+			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "14px",
+				},
+				pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.0f}%</b><br/>',
+				shared: true
+			},
+			plotOptions: {
+				column: {
+					stacking: 'percent',
+					dataLabels: {
+						enabled: true,
+						color: '#37474F',
+						formatter:function() {
+							return parseInt(this.percentage) + '%';
+						},
+						style: {
+							fontSize: "14px",
+							shadow: false,
+							textOutline: "",
+							fontWeight: 'bold'
+						}
+					}
+				}
+			},
+			legend: {
+				itemDistance: 40,
+				itemStyle: {
+					"fontSize": "16px"
+				}
+			},
+			navigation: {
+				buttonOptions: {
+					align:"right",
+					height: 40,
+					width: 48,
+					symbolSize: 24,
+					symbolX: 23,
+					symbolY: 21,
+					symbolStrokeWidth: 2,
+					x: 20,
+					y:-40
+				}
+			},
+			colors: [],
+			series: []
+		};
+
+		this.ChartEleven = {
+			chart: {
+				type: 'column',
+				spacingBottom: 25,
+				spacingTop: 50,
+				spacingLeft: 25,
+				spacingRight: 25,
+				height: 650,
+				plotAreaHeight: 650
+			},
+			title: {
+				text: ''
+			},
+			xAxis: {
+				title: {
+					enabled: true,
+					text: 'Año'
+				},
+				crosshair: true
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Millones de pesos a precios del 2012'
+				},
+				categories: [],
+				stackLabels: {
+					enabled: false,
+					style: {
+						fontWeight: 'bold'
+					}
+				},
+				labels: {
+					formatter: function(){
+						return "$" + (parseInt(this.value) / 1000) + "M";
+					}
+				}
+			},
+			tooltip: {
+				backgroundColor: "#37474F",
+				borderWidth: 0,
+				style: {
+				  color: "white",
+				  fontSize: "13px",
+				},
+				split: false,
+				valueSuffix: ' millones',
+				valueDecimals: 2,
+				valuePrefix: '$',
+				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <br><b>{point.y}</b><br/>',
+			},
+			plotOptions: {
+				series: {
+					stacking: 'normal',
+					enabled:false
 				}
 			},
 			legend: {

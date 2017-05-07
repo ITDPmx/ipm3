@@ -8,18 +8,18 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./ipm-header.component.css']
 })
 export class IpmHeaderComponent implements OnInit {
-  private isMenuOpen: Boolean = false;
-  private ipmLogo: String;
-  private itdpLogo: String;
-  private embassyLogo: String;
-  private updateColor: String;
-  private updateMenuButton: String;
-  private whiteLogo: String = './assets/images/logo_ipm_white.png';
-  private grayLogo: String = './assets/images/logo_ipm_gray.png';
-  private itdpWhiteLogo: String = './assets/images/logo_itdp_mexico_white.png';
-  private itdpGrayLogo: String = './assets/images/logo_itdp_mexico_black.png';
-  private embassyWhiteLogo: String = './assets/images/logo_embajada_britanica_white.png';
-  private embassyGrayLogo: String = './assets/images/logo_embajada_britanica_black.png';
+  public isMenuOpen: Boolean = false;
+  public ipmLogo: String;
+  public itdpLogo: String;
+  public embassyLogo: String;
+  public updateColor: String;
+  public updateMenuButton: String;
+  public whiteLogo: String = './assets/images/logo_ipm_white.png';
+  public grayLogo: String = './assets/images/logo_ipm_gray.png';
+  public itdpWhiteLogo: String = './assets/images/logo_itdp_mexico_white.png';
+  public itdpGrayLogo: String = './assets/images/logo_itdp_mexico_black.png';
+  public embassyWhiteLogo: String = './assets/images/logo_embajada_britanica_white.png';
+  public embassyGrayLogo: String = './assets/images/logo_embajada_britanica_black.png';
 
   constructor( private router: Router ) { }
 

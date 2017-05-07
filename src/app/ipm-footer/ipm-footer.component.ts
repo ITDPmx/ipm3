@@ -7,7 +7,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./ipm-footer.component.css']
 })
 export class IpmFooterComponent implements OnInit {
-	private isFooter: boolean;
+	public isFooter: boolean;
   @ViewChild('footer') footer;
   constructor( private router: Router) { }
 

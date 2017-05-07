@@ -9,7 +9,6 @@ import { ChartDataService } from '../../chart.data.service';
 })
 export class ChartPercentageComponent implements OnInit {
 
-
 	@Input() options: object;
 	@Input() nineChartUpdateYear: string;
 	_chart: any;

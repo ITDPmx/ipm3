@@ -214,9 +214,6 @@
 }
 
 @media screen and (min-width: 768px) {
-	.m-header-list{
-		display: flex; 
-	}
 	.m-header__logo-img {
 		height: 56px;
 	}
@@ -229,5 +226,10 @@
 	.overlay .overlay-close {
 		width: 80px;
 		height: 80px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.m-header-list{
+		display: flex; 
 	}
 }

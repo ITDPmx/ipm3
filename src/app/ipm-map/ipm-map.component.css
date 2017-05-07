@@ -7,13 +7,13 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	bottom: 50%;
+	bottom: 75%;
 	left: 0;
 	z-index: 4;
 }
 .m-sidebar {
 	position:fixed;
-	top:50%;
+	top:25%;
 	bottom:0;
 	left:0;
 	width: 100%;
@@ -44,7 +44,8 @@
 }
 
 .m-small-title--in-sidebar {
-	font-size: 18px
+	font-size: 18px;
+	padding: 7px 0;
 }
 
 .m-medium-title--in-sidebar {
@@ -56,7 +57,11 @@
 }
 .m-sidebar__zm-select {
 	width: 100%;
-	margin: 5px auto 0px;
+	margin: 0 auto;
+	background:white;
+}
+.m-sidebar__infra {
+	height: calc(100% - 75px);
 }
 @media screen and (min-width: 568px) {
 	.m-sidebar {
@@ -74,6 +79,13 @@
 	.m-sidebar {
 		top:0;
 	}
+	.m-sidebar__zm {
+		padding: 4px 0px 4px 153.82px;
+	}
+	.m-sidebar__zm-select {
+		width: 340px;
+	}
+
 }
 
 @media screen and (min-width: 992px) {
@@ -87,6 +99,6 @@
 		padding-top: initial;
 	}
 	.m-sidebar__infra {
-		height: calc(100% - 24px);
+		height: calc(100% - 71px);
 	}
 }

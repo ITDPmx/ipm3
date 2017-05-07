@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { ChartModule } from 'angular2-highcharts';
+import { SelectModule } from 'ng-select';
 
 import { AppComponent } from './app.component';
 import { IpmHeaderComponent } from './ipm-header/ipm-header.component';
@@ -32,6 +33,7 @@ import { ChartExercisedComponent } from './charts/chart-exercised/chart-exercise
 import { ChartPercentageComponent } from './charts/chart-percentage/chart-percentage.component';
 import { ChartPercentageInvestmentComponent } from './charts/chart-percentage-investment/chart-percentage-investment.component';
 import { ChartInvestmentComponent } from './charts/chart-investment/chart-investment.component';
+import { IpmDownloadComponent } from './ipm-download/ipm-download.component';
 
 export declare let require: any;
 const Highcharts = require('highcharts');
@@ -59,6 +61,10 @@ const routes = [
   {
     path: 'mapa',
     component: IpmMapComponent
+  },
+  {
+    path: 'descargas',
+    component: IpmDownloadComponent
   }
 ];
 
@@ -84,7 +90,8 @@ const routes = [
     ChartExercisedComponent,
     ChartPercentageComponent,
     ChartPercentageInvestmentComponent,
-    ChartInvestmentComponent
+    ChartInvestmentComponent,
+    IpmDownloadComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +99,8 @@ const routes = [
     HttpModule,
     RouterModule.forRoot(routes),
     NgsRevealModule.forRoot(),
-    ChartModule
+    ChartModule,
+    SelectModule
   ],
   providers: [
     ChartDataService,
