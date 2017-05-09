@@ -669,10 +669,8 @@ export class IpmResultsComponent implements OnInit {
 					}
 				},
 				labels: {
-					formatter: function(){
-						return "$" + (parseInt(this.value) / 1000) + "M";
-					}
-				}
+        	format: '${value:,2f}'
+        }
 			},
 			tooltip: {
 				backgroundColor: "#37474F",
@@ -925,9 +923,7 @@ export class IpmResultsComponent implements OnInit {
 					}
 				},
 				labels: {
-					formatter: function(){
-						return "$" + (parseInt(this.value) / 1000) + "M";
-					}
+					format: '${value:,2f}'
 				}
 			},
 			tooltip: {

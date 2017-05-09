@@ -36,6 +36,9 @@ export class ChartInvestmentComponent implements OnInit {
 		.map( event => { return event.years[this.elevenChartUpdateYear] })
 		.subscribe(data =>{
 			if (bool) {
+				
+				//this._chart["yAxis"][0].max = parseInt(13);
+				
 				this._chart["xAxis"][0].setCategories(data.categories);
 				this._chart.addSeries(data.series[0]);
 				this._chart.addSeries(data.series[1]);
@@ -53,6 +56,22 @@ export class ChartInvestmentComponent implements OnInit {
 				this._chart.series[4].setData(data.series[4].data);
 				this._chart.series[5].setData(data.series[5].data);
 			}
+			var maxValue = [
+				data.series[0].data,
+				data.series[1].data,
+				data.series[2].data,
+				data.series[3].data,
+				data.series[4].data,
+				data.series[5].data
+			];
+			// let maxA:any = maxValue.map(a => Math.max.apply(null, a));
+			// console.log(maxA);
+			// // maxA = maxA[0]+maxA[1]+maxA[2]+maxA[3]+maxA[4]+maxA[5];
+			// // console.log(maxA);
+			// maxA = Number(maxA.toString().substring(0,2) * 100 + 2000);
+			// console.log(maxA);
+			// // maxA = Number(Math.max.apply(null,maxA).toString().substring(0,2)) * 1000 + 2000;
+			// this._chart["yAxis"][0].setExtremes(0, maxA);
 		});
 
 		this._getYearSeries.subscribe(data => {
