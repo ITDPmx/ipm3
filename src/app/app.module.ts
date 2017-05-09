@@ -97,7 +97,7 @@ const routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     NgsRevealModule.forRoot(),
     ChartModule,
     SelectModule

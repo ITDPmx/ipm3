@@ -18,6 +18,7 @@ const zm = window["zmData"];
 })
 
 export class IpmMapComponent implements OnInit {
+
   public ChartInfra: object;
   public ChartSplit: object;
   public ChartYear: object;

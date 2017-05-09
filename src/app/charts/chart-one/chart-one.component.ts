@@ -31,5 +31,4 @@ export class ChartOneComponent implements OnInit {
 			this.options["colors"] = this._colors;
 		}
 	}
-
 }
