@@ -39,7 +39,7 @@ export class ChartInvestmentComponent implements OnInit {
 				
 				//this._chart["yAxis"][0].max = parseInt(13);
 				
-				this._chart["xAxis"][0].setCategories(data.categories);
+				this._chart["xAxis"][0].setCategories();
 				this._chart.addSeries(data.series[0]);
 				this._chart.addSeries(data.series[1]);
 				this._chart.addSeries(data.series[2]);

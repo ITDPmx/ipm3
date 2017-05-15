@@ -1,4 +1,9 @@
 import { Component, OnInit, Output} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/from';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/find';
+import 'rxjs/add/operator/filter';
 import {NgsRevealModule} from 'ng-scrollreveal';
 export declare let require: any;
 const Chart = require('highcharts');
@@ -26,8 +31,10 @@ export class IpmResultsComponent implements OnInit {
 	public nineYearActive: string;
 	public tenYearActive: string;
 	public elevenYearActive: string;
+	_getAbbrev: any;
 
 	constructor() {
+
 		this.sixYearActive = "2011";
 		this.sevenYearActive = "2011";
 		this.eightYearActive = "2011";
@@ -669,7 +676,9 @@ export class IpmResultsComponent implements OnInit {
 					}
 				},
 				labels: {
-        	format: '${value:,2f}'
+        	formatter: function(){
+						return "$" + (parseInt(this.value) / 1000) + "M";
+					}
         }
 			},
 			tooltip: {
@@ -923,7 +932,9 @@ export class IpmResultsComponent implements OnInit {
 					}
 				},
 				labels: {
-					format: '${value:,2f}'
+					formatter: function(){
+						return "$" + (parseInt(this.value) / 1000) + "M";
+					}
 				}
 			},
 			tooltip: {
@@ -934,9 +945,11 @@ export class IpmResultsComponent implements OnInit {
 				  fontSize: "13px",
 				},
 				split: false,
+				shared: true,
 				valueSuffix: ' millones',
 				valueDecimals: 2,
 				valuePrefix: '$',
+    		headerFormat: '<span style="font-size: 14px; font-weight:700;">{point.key}</span><br/>',
 				pointFormat: '<span style="color:{series.color};font-weight:bold;">{series.name}</span>: <br><b>{point.y}</b><br/>',
 			},
 			plotOptions: {
@@ -971,6 +984,38 @@ export class IpmResultsComponent implements OnInit {
 
 	ngOnInit() {
 		
+	}
+
+	abbreviation() {
+		console.log("sdf");
+		// var _categories = [
+		// 	{"abbreviature": "FISE","translate": "Fondo de Infraestructura Social Estatal"},
+		// 	{"abbreviature": "FISM","translate": "Fondo de Aportaciones para la Infraestructura Social Municipal"},
+		// 	{"abbreviature": "REP","translate": "Programa de Rescate a Espacios Públicos"},
+		// 	{"abbreviature": "FATP","translate": "Fondo para la Accesibilidad en el Transporte Público para las Personas con Discapacidad"},
+		// 	{"abbreviature": "FORTAMUN","translate": "Fondo de Aportaciones para el Fortalecimiento de los Municipios y sus Demarcaciones"},
+		// 	{"abbreviature": "HAB","translate": "Hábitat"},
+		// 	{"abbreviature": "FM","translate": "Fondo Metropolitano"},
+		// 	{"abbreviature": "FAFEF","translate": "Fondo de Aportaciones para el Fortalecimiento de las Entidades Federativas"},
+		// 	{"abbreviature": "CONV","translate": "Convenios"},
+		// 	{"abbreviature": "REG","translate": "Fondo Regional"},
+		// 	{"abbreviature": "CONT","translate": "Contingencias Económicas"},
+		// 	{"abbreviature": "FOPEDEM","translate": "Fondo para la Prevención de Desastres Naturales"},
+		// 	{"abbreviature": "Otros","translate": "Programas fusionados"},
+		// 	{"abbreviature": "FDRS","translate": "Fondo para Drenaje y Residuos Sólidos"},
+		// 	{"abbreviature": "CPM","translate": "Convenios Partidas Mixtas"},
+		// 	{"abbreviature": "EDU","translate": "Educación"},
+		// 	{"abbreviature": "FONADIN","translate": "Fondo Nacional de Infraestructura"},
+		// 	{"abbreviature": "CAPUFE","translate": "Caminos y Puentes Federales"}
+		// ];
+		// Observable.from(_categories)
+		// .map( event => {console.log(event);})
+
+	 //  var s = '<b></b><br>';
+	 //  for (var i = 0; i < this.points.length; ++i) {
+	 //  	s += '<span style="color:'+this.points[i].color+';font-weight:bold;">'+this.points[i].series.name+'</span>: <br><b>'+this.points[i].total+'</b><br/>';
+	 //  }
+	 //  return s;
 	}
 
 	setSixChartYear(yearId) {
