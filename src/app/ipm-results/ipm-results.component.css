@@ -72,6 +72,21 @@
     font-weight: 500;
     padding: 0 10px;
 }
+
+.m-acronyms-list {
+	padding: 0;
+}
+.m-acronyms-list__title{
+	color: #37474F;
+	margin: 0;
+	display:inline-block;
+}
+.m-acronyms-list__item{
+	font-size: 12px;
+	color: #37474F;
+	display:inline-block;
+}
+
 @media screen and (min-width: 768px) {
 	.m-results {
 			padding: 90px 0px;
