@@ -643,22 +643,23 @@ export class IpmResultsComponent implements OnInit {
 		}
 
 		this.ChartEight = {
+
 			chart: {
 				type: 'column',
 				spacingBottom: 25,
 				spacingTop: 50,
 				spacingLeft: 25,
 				spacingRight: 25,
-				height: 550,
-				plotAreaHeight: 550
+				height: 500,
+				plotAreaHeight: 500
 			},
 			title: {
 				text: ''
 			},
 			xAxis: {
+				categories: [],
 				title: {
-					enabled: true,
-					text: 'Año'
+					text: null
 				},
 				crosshair: true
 			},
@@ -675,8 +676,10 @@ export class IpmResultsComponent implements OnInit {
 					}
 				},
 				labels: {
-        	format: '${value:,2f}'
-        }
+					formatter: function(){
+						return "$" + (parseInt(this.value) / 1000) + "M";
+					}
+				}
 			},
 			tooltip: {
 				backgroundColor: "#37474F",
@@ -686,6 +689,7 @@ export class IpmResultsComponent implements OnInit {
 				  fontSize: "13px",
 				},
 				split: false,
+				shared: true,
 				valueSuffix: ' millones',
 				valueDecimals: 2,
 				valuePrefix: '$',
@@ -693,8 +697,9 @@ export class IpmResultsComponent implements OnInit {
 			},
 			plotOptions: {
 				series: {
-					stacking: 'normal',
-					enabled:false
+					dataLabels: {
+						enabled: false
+					}
 				}
 			},
 			legend: {
@@ -929,7 +934,9 @@ export class IpmResultsComponent implements OnInit {
 					}
 				},
 				labels: {
-					format: '${value:,2f}'
+					formatter: function(){
+						return "$" + (parseInt(this.value) / 1000) + "M";
+					}
 				}
 			},
 			tooltip: {
@@ -949,7 +956,7 @@ export class IpmResultsComponent implements OnInit {
 			},
 			plotOptions: {
 				series: {
-					stacking: 'normal',
+					stacking: 'column',
 					enabled:false
 				}
 			},
