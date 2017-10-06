@@ -13,7 +13,7 @@ export class ChartInfrastructureComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	this.options["colors"] = ["#9dd477","#98cfff","#fa8b7d","#fdd625","#80CBC4"];
+  	this.options["colors"] = ["#9dd477","#98cfff","#fa8b7d","#fdd625","#80CBC4", "#7493CD"];
   }
 
   ngAfterViewInit() {
@@ -69,6 +69,14 @@ export class ChartInfrastructureComponent implements OnInit {
 				this.selectedZm["TPublico2015"],
 				this.selectedZm["Auto2015"],
 				this.selectedZm["Pavimentacion2015"]
+		]);
+		this._chart.series[5].setData([
+				this.selectedZm["InfPeaton2016"],
+				this.selectedZm["Ciclopista2016"],
+				this.selectedZm["EPublico2016"],
+				this.selectedZm["TPublico2016"],
+				this.selectedZm["Auto2016"],
+				this.selectedZm["Pavimentacion2016"]
 		]);
 	}
 
