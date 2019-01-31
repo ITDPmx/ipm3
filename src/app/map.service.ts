@@ -7,9 +7,8 @@ import * as L from 'leaflet';
 export class MapService {
 	layer: any;
 	constructor() {
-		this.layer = L.tileLayer('https://{s}.tiles.mapbox.com/v3/itdpmexico.ig2j36lg/{z}/{x}/{y}.png', {
+		this.layer = L.tileLayer('https://api.mapbox.com/styles/v1/itdpmexico/cjb9pyd2a4g8a2rmv8zp0clpf/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaXRkcG1leGljbyIsImEiOiJLQ2l3TGpRIn0.5vOKiHRBTwwiJRmh_FI3jw', {
 		  attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
 		});
 	}
-
 }

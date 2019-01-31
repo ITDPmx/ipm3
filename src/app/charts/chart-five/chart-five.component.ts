@@ -13,15 +13,16 @@ export class ChartFiveComponent implements OnInit {
 		this._categories = ['Transporte Público', 'Bicicleta, caminata (espacio público)', 'Automóvil, taxi y otros'];
 		this._series = [
 			{
-				 name: 'Viajes al trabajo',
-				 data: [45, 24, 31]
-			},{
-				 name: 'Inversión',
-				 data: [6, 13, 80]
+				name: 'Viajes al trabajo',
+				data: [45, 24, 31]
 			},
 			{
-				 name: 'Viajes a la escuela',
-				 data: [32, 43, 25]
+				name: 'Inversión',
+				data: [6, 13, 80]
+			},
+			{
+				name: 'Viajes a la escuela',
+				data: [32, 43, 25]
 			}
 		];
 		this._colors = ["#9dd477","#98cfff","#fa8b7d"];

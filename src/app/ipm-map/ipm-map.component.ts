@@ -641,5 +641,4 @@ export class IpmMapComponent implements OnInit {
       this.currentZm = event.properties.informacion;
     });
   }
-
 }
